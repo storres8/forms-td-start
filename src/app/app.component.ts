@@ -20,6 +20,8 @@ export class AppComponent {
 
   // Since we are using a reference in the template for our form we can also access
   // our from with the @ViewChild.
+  // This particular way of accessing the form is useful if you need to access your data before you submit
+  // the form.
   onSubmit() {
     console.log(this.signupForm);
   }
