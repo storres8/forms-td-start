@@ -4,7 +4,7 @@
       <!-- (ngSubmit) is given to us by angular & is used to submit a form. -->
       <!-- we assign a reference of ngForm to get access to our form and pass it along. -->
       <form (ngSubmit)="onSubmit()" #f="ngForm">
-        <div id="user-data">
+        <div id="user-data" ngModelGroup="userData" #userData="ngModelGroup">
           <div class="form-group">
             <label for="username">Username</label>
             <input
@@ -36,6 +36,9 @@
             Please enter a valid email!
           </span>
         </div>
+        <p *ngIf="!userData.valid && userData.touched">
+          User data is invalid!
+        </p>
         <div class="form-group">
           <label for="secret">Secret Questions</label>
           <select
