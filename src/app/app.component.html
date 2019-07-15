@@ -4,6 +4,7 @@
       <!-- (ngSubmit) is given to us by angular & is used to submit a form. -->
       <!-- we assign a reference of ngForm to get access to our form and pass it along. -->
       <form (ngSubmit)="onSubmit()" #f="ngForm">
+        <!-- ngModelGroup is used to assign a subgroup inside our values object -->
         <div id="user-data" ngModelGroup="userData" #userData="ngModelGroup">
           <div class="form-group">
             <label for="username">Username</label>
