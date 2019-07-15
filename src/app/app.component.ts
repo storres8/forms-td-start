@@ -14,6 +14,22 @@ export class AppComponent {
 
   suggestUserName() {
     const suggestedName = "Superuser";
+    // // using the setValue method we can override any values that were already on the form when the button is
+    // // pressed. If we want to path a form we can use the patchValue method on the form as shown below.
+    // this.signupForm.setValue({
+    //   userData: {
+    //     username: "suggestedName",
+    //     email: ""
+    //   },
+    //   secret: "pet",
+    //   questionAnswer: "",
+    //   gender: "male"
+    // });
+    this.signupForm.form.patchValue({
+      userData: {
+        username: "suggestedName"
+      }
+    });
   }
 
   // // the form data that comes in is actually a JS object but is of type ngForm by default bc of angular.
